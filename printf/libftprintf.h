@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 15:38:05 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/20 18:20:11 by amorcill         ###   ########.fr       */
+/*   Created: 2021/07/20 10:13:27 by amorcill          #+#    #+#             */
+/*   Updated: 2021/07/20 17:18:01 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-int 
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <stdarg.h>
 
+int	ft_printf(const char *, ...);
 
-int ft_printf(const char *fmt, ...)
-{
-	int ret;
-	va_list ap;
-	
-	va_start(ap, fmt);
-	ret = vfprintf(strdout, locale, fm, ap);
-	va_end(ap);
-	return (ret);
-}
+#endif
