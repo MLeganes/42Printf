@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 18:31:04 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 18:58:55 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 22:51:48 by x250             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ static int	ft_intlen(unsigned int n)
 }
 
 static void	ft_putuinbr_fd(unsigned int n, int fd)
-{	
-	if (n < 0)
-	{		
-		return ;
-	}
+{
 	if (n / 10)
 		ft_putuinbr_fd(n / 10, fd);
 	ft_putchar_fd(n % 10 + '0', fd);
