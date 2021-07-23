@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 12:34:57 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 21:27:08 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 21:37:20 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 
 int ft_printf_hex(unsigned int u, int lower)
 {
-	static int len;
-
-	len = 0;
 	if (u == 0)	
 		return (write(1, "0", 1));		
 	return ( ft_dec_to_hex(u, lower, 1));
