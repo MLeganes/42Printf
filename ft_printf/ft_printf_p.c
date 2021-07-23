@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:09:16 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 10:09:18 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 10:24:26 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ static void	ft_putulnbr_fd(unsigned long n, int fd)
 {
 	if (n == 0 || n == -0)
 	{
-		write(fd, "0", 1);
+		write(fd, "0x0", 3);
 	}
 	if (n == 18446744073709551615UL )
 	{
 		write(fd, "18446744073709551615", 20);
 	}
-	if (n > 18446744073709551614UL || n < -1)
+	if (n > 18446744073709551614UL )
         return ;
 	if (n / 10)
         ft_putulnbr_fd(n / 10, fd);

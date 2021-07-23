@@ -6,7 +6,7 @@
 #    By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/23 10:09:55 by amorcill          #+#    #+#              #
-#    Updated: 2021/07/23 10:09:57 by amorcill         ###   ########.fr        #
+#    Updated: 2021/07/23 15:58:11 by amorcill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = libftprintf.a
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = 	ft_printf.c    ft_printf_d.c  ft_printf_p.c  ft_vsprintf.c \
-		ft_printf_arg.c  ft_printf_c.c  ft_printf_s.c  \
+SRCS = 	ft_printf.c    ft_printf_d.c  ft_printf_p.c  \
+		ft_printf_arg.c  ft_printf_s.c  \
 
 
 $(NAME):

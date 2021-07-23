@@ -11,12 +11,19 @@ int main()
     // printf("\n Numbers printed: %d \n", ret);
     
     // ********* pointer
-    char str[]="This is string-pointer";
-    int ret;
-    ret = ft_printf("Test for p: %p", &str);
+    // char str[]="This is string-pointer";
+    // int ret;
+	// printf("\n   System pointer %p ", &str);
+    // ret = ft_printf(" My p: %p ", &str);
 
-    //ret = ft_printf("number: %d", ret);
-    // printf("\n Numer of chars: %d \n", ret);
+
+	int a;
+	int ret;
+
+	a = 0x0000ee;
+	ret = ft_printf("My hex: %x", a);
+    printf("\n Sys hex: %x \n", a);
+    
 
     return 0;
 }
