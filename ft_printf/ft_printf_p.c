@@ -3,50 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:09:16 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 21:37:58 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 23:02:30 by x250             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// static int	ft_unsignedlonglen(unsigned long n)
-// {
-// 	int		count;
-
-// 	count = 0;
-// 	while (n != 0)
-// 	{
-// 		n = n / 10;
-// 		count++;
-// 	}
-// 	return (count);
-// }
-
-// static void	ft_putchar_fd(char c, int fd)
-// {	
-// 	write (fd, &c, 1);
-// }
-
-
-// static void	ft_putulnbr_fd(unsigned long n, int fd)
-// {
-// 	if (n == 0 || n == -0)
-// 	{
-// 		write(fd, "0x0", 3);
-// 	}
-// 	if (n == 18446744073709551615UL )
-// 	{
-// 		write(fd, "18446744073709551615", 20);
-// 	}
-// 	if (n > 18446744073709551614UL )
-//         return ;
-// 	if (n / 10)
-//         ft_putulnbr_fd(n / 10, fd);
-// 	ft_putchar_fd(n % 10 + '0', fd);
-// }
 
 static int	ft_tolower(int c)
 {
@@ -64,7 +28,7 @@ static int	ft_dec_to_hex(unsigned long n, int lower, int reset)
 	static int		len;
 
 	if (reset)
-		len = 0;
+		len = 2;
 		
 	if (n / 16)
 		ft_dec_to_hex((n / 16), lower, 0);
@@ -81,6 +45,7 @@ static int	ft_dec_to_hex(unsigned long n, int lower, int reset)
 int ft_printf_p(unsigned long ptr)
 {
   	if (!ptr)
-		return (write(1, "0", 1));
+		return (write(1, "(nil)", 5));
+    write(1, "0x", 2);
     return (ft_dec_to_hex(ptr, 1, 1));
 }
