@@ -4,42 +4,26 @@
 int main()
 {
 
-    //*********char
-    // int ret;
-    // char c = 'A';
-    // ret = ft_printf("Test char: %c", c);
-    // printf("\n Numbers printed: %d \n", ret);
-    
-    // ********* pointer
-    // char str[]="This is string-pointer";
-    // int ret;
-	// printf("\n   System pointer %p ", &str);
-
-
-    // ret = ft_printf(" My p: %p ", &str);
-
 /***
- * DECIMAL
+ * HEXADECIMAL
  */
-	int B;
-	B = 0;
-	printf("\n -------- decimal ----------- \n");
-	printf("%d_ ", ft_printf("%d", B));
+//int u;
+//	u = 0x23EE;
+	printf("\n -------- unsigned int ----------- \n");
+	printf("_%d_ ", ft_printf(" %x ", 10));
 	printf("\n");
-    printf("%d_", printf("%d", B));    
+    printf("_%d_", printf(" %x ", 10));    
 	printf("\n");
-
-
 
 /***
  * HEXADECIMAL
  */
-	int a;
-	a = 0x0000ee;
-	printf("\n");
-	printf("%d", ft_printf(" My hex: %x ", a));
-	printf("\n");
-    printf("%d", printf(" Sys hex: %x ", a));    
+	// int a;
+	// a = 0x0000ee;
+	// printf("\n");
+	// printf("%d", ft_printf(" My hex: %x ", a));
+	// printf("\n");
+    // printf("%d", printf(" Sys hex: %x ", a));    
 
     return 0;
 }

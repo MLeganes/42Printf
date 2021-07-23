@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:08:43 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 16:21:33 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 18:54:16 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	ft_printf_arg(va_list args, char fmt)
 		return (ft_printf_hex(va_arg(args, unsigned int), 1));
 	if (fmt == 'X')
 		return (ft_printf_hex(va_arg(args, unsigned int), 0));
-	//if (fmt == 'u')
-		//ft_printf_u(va_arg(args, unsigned int));
+	if (fmt == 'u')
+		return (ft_printf_u(va_arg(args, unsigned int)));
 	if (fmt == '%')
 		return (write(1, &"%", 1));
 	return (0);

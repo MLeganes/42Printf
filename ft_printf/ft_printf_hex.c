@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 12:34:57 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 17:04:23 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 21:12:51 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,32 @@ static int	ft_tolower(int c)
 	return (ret);
 }
 
-static int	ft_dec_to_hex(unsigned long  n, int lower, int reset)
+static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 {
-	unsigned long long	o;
-	char				r;
-	static int			length = 0;
+	char			r;
+	static int		len;
 
-	o = 0;
 	if (reset)
-		length = 0;
-	if (n == 0)
-		return (length);
-	o = n % 16;
-	ft_dec_to_hex((n / 16), lower, 0);
-	if (o > 9)
-		r = 'A' + (o - 10);
+		len = 0;
+		
+	if (n / 16)
+		ft_dec_to_hex((n / 16), lower, 0);
+	if ((n % 16) > 9)
+		r = 'A' + ((n % 16) - 10);
 	else
-		r = (o + 48);
+		r = ((n % 16) + 48);
 	if (lower == 1)
 		r = ft_tolower(r);
-	length++;
-	write(1, &r, 1);
-	return (length);
+	len += write(1, &r, 1);
+	return (len);
 }
 
 int ft_printf_hex(unsigned int u, int lower)
 {
-	int ret;
+	static int len;
 
-	ret = 0;
-	ret = ft_dec_to_hex(u, lower, 0);	
-	return (ret);	
+	len = 0;
+	if (u == 0)	
+		return (write(1, "0", 1));		
+	return ( ft_dec_to_hex(u, lower, 1));
 }
