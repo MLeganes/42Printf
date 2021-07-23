@@ -6,7 +6,7 @@
 /*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 18:31:04 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 22:51:48 by x250             ###   ########.fr       */
+/*   Updated: 2021/07/24 00:58:44 by x250             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ static void	ft_putuinbr_fd(unsigned int n, int fd)
 	ft_putchar_fd(n % 10 + '0', fd);
 }
 
-
-int ft_printf_u(unsigned int ui)
+int	ft_printf_u(unsigned int ui)
 {
-	int ret;
+	int	ret;
 
-	if (ui == 0)	
+	if (ui == 0)
 	{
 		write(1, "0", 1);
 		return (1);

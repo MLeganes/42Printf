@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 12:34:57 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 21:37:20 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/24 00:51:18 by x250             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 
 	if (reset)
 		len = 0;
-		
 	if (n / 16)
 		ft_dec_to_hex((n / 16), lower, 0);
 	if ((n % 16) > 9)
@@ -42,9 +41,9 @@ static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 	return (len);
 }
 
-int ft_printf_hex(unsigned int u, int lower)
+int	ft_printf_hex(unsigned int u, int lower)
 {
-	if (u == 0)	
-		return (write(1, "0", 1));		
-	return ( ft_dec_to_hex(u, lower, 1));
+	if (u == 0)
+		return (write(1, "0", 1));
+	return (ft_dec_to_hex(u, lower, 1));
 }

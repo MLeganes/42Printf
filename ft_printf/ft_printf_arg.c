@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:08:43 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 18:54:16 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/24 00:48:15 by x250             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf_arg(va_list args, char fmt)
 {
 	char	c;
-	
+
 	if (fmt == 'c')
 	{
 		c = (char)va_arg(args, int);
