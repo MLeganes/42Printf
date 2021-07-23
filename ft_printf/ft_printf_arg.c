@@ -6,23 +6,16 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:08:43 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 16:04:29 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:21:33 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/***
- * cspdiuxX%
- * 
- * 
- **/
-
 int	ft_printf_arg(va_list args, char fmt)
 {
 	char	c;
-
-	c = NULL;
+	
 	if (fmt == 'c')
 	{
 		c = (char)va_arg(args, int);
@@ -35,11 +28,11 @@ int	ft_printf_arg(va_list args, char fmt)
 	if (fmt == 'd' || fmt == 'i')
 		return (ft_printf_d(va_arg(args, int)));
 	if (fmt == 'x')
-		return (ft_printf_hex(va_arg(args, unsigned int), 0));
-	if (fmt == 'X')
 		return (ft_printf_hex(va_arg(args, unsigned int), 1));
-	if (fmt == 'u')
-		ft_printf_u(va_arg(args, unsigned int));
+	if (fmt == 'X')
+		return (ft_printf_hex(va_arg(args, unsigned int), 0));
+	//if (fmt == 'u')
+		//ft_printf_u(va_arg(args, unsigned int));
 	if (fmt == '%')
 		return (write(1, &"%", 1));
 	return (0);

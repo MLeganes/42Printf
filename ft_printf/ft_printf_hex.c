@@ -6,13 +6,23 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 12:34:57 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 15:45:24 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 17:04:23 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_dec_to_hex(unsigned long long n, int lower, int reset)
+static int	ft_tolower(int c)
+{
+	int	ret;
+
+	ret = c;
+	if (c > 64 && c < 91)
+		ret += 32;
+	return (ret);
+}
+
+static int	ft_dec_to_hex(unsigned long  n, int lower, int reset)
 {
 	unsigned long long	o;
 	char				r;
@@ -29,7 +39,7 @@ static int	ft_dec_to_hex(unsigned long long n, int lower, int reset)
 		r = 'A' + (o - 10);
 	else
 		r = (o + 48);
-	if (lower == 0)
+	if (lower == 1)
 		r = ft_tolower(r);
 	length++;
 	write(1, &r, 1);
@@ -41,8 +51,6 @@ int ft_printf_hex(unsigned int u, int lower)
 	int ret;
 
 	ret = 0;
-	
-		
-	
+	ret = ft_dec_to_hex(u, lower, 0);	
 	return (ret);	
 }

@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:09:07 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 10:09:09 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 17:50:09 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,10 @@ static int	ft_intlen(int n)
 }
 
 static void	ft_putnbr_fd(int n, int fd)
-{
+{	
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n == 2147483647)
-	{
-		write(fd, "2147483647", 10);
 		return ;
 	}
 	if (n < 0)
@@ -61,9 +56,14 @@ static void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(n % 10 + '0', fd);
 }
 
-
-int ft_printf_d(int d)
+int	ft_printf_d(int d)
 {
-    ft_putnbr_fd(d, 1);
-    return (ft_intlen(d));
+	if (d == 0)	
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+		
+	ft_putnbr_fd(d, 1);
+	return (ft_intlen(d));
 }
