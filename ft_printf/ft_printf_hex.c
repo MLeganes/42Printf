@@ -6,7 +6,7 @@
 /*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 12:34:57 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/23 21:12:51 by amorcill         ###   ########.fr       */
+/*   Updated: 2021/07/23 21:27:08 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_tolower(int c)
 
 static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 {
-	char			r;
+	char			hex;
 	static int		len;
 
 	if (reset)
@@ -33,12 +33,12 @@ static int	ft_dec_to_hex(unsigned int n, int lower, int reset)
 	if (n / 16)
 		ft_dec_to_hex((n / 16), lower, 0);
 	if ((n % 16) > 9)
-		r = 'A' + ((n % 16) - 10);
+		hex = 'A' + ((n % 16) - 10);
 	else
-		r = ((n % 16) + 48);
+		hex = ((n % 16) + 48);
 	if (lower == 1)
-		r = ft_tolower(r);
-	len += write(1, &r, 1);
+		hex = ft_tolower(hex);
+	len += write(1, &hex, 1);
 	return (len);
 }
 
