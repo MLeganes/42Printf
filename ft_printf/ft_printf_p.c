@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: x250 <x250@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: amorcill <amorcill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 10:09:16 by amorcill          #+#    #+#             */
-/*   Updated: 2021/07/24 09:41:33 by x250             ###   ########.fr       */
+/*   Updated: 2021/07/27 11:15:33 by amorcill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static int	ft_puthex(unsigned long n, int lower, int reset)
 
 int	ft_printf_p(unsigned long ptr)
 {
-	if (!ptr)
-		return (write(1, "(nil)", 5));
+	if (ptr == 0 )
+		return (write(1, "0x0", 3));
 	write(1, "0x", 2);
 	return (ft_puthex(ptr, 1, 1));
 }
