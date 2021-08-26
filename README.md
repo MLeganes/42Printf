@@ -1,6 +1,6 @@
-ft_printf
+ # 42Printf
 
-Ft_printf is a copy of printf from lib stdio.h without less funcionalities.  The common structure for printf is:
+**Ft_printf** is a copy of printf from lib stdio.h without less funcionalities.  The common structure for printf is:
 
 %[flags][width][.precision][length]specifier
 
